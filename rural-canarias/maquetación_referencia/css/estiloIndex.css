@@ -1,0 +1,5 @@
+.separador{
+    height: 50px !important;
+    margin-bottom: 5pt !important;    
+    background-color: var(--color-texto);
+}

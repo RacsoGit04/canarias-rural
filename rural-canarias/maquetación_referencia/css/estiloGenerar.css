@@ -1,0 +1,113 @@
+/* 1. Vinculadas al repositorio (Google Fonts)  */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Lato:wght@400;700&display=swap');
+
+
+ @font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato-regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('../fonts/roboto-slab-bold.woff2') format('woff2');
+  font-weight: 700;
+}  */
+
+
+/*--PALETA Elegida ANÁLOGA(verde + marron)*/
+:root {
+    --color-primario: rgba(25, 135, 84, 1);
+    --color-primario-hover:rgb(26, 106, 26);
+    --color-titulos: #8B4513;
+    --color-texto:rgba(25, 135, 84, 1);
+    --color-fondo: rgb(32, 164, 103);    
+    --color-blanco: #ffffff;
+    --color-bordes: #ddd;
+    --color-importante: red;
+    --color-footer: rgb(15, 83, 23);
+  
+    --fuente-titulos: 'Roboto Slab', serif; 
+    --fuente-cuerpo: 'Lato', sans-serif;  
+}
+
+/*--PALETA MONOCROMÁTICA (solo naranjas)*/
+/* :root {
+    --color-primario: #ff6600;
+    --color-primario-hover: #FFA500;
+    --color-titulos: #333;
+    --color-texto: #555;
+    --color-fondo: #FFA500;    
+    --color-blanco: #ffffff;
+    --color-bordes: #e8cda2;
+    --color-importante: #CC8400;
+    --color-footer: #FFE5BF;
+  
+    --fuente-titulos: 'Roboto Slab', serif; 
+    --fuente-cuerpo: 'Lato', sans-serif;  
+} */
+
+/*--PALETA COMPLEMENTARIA (naranja + azul)*/
+/* :root {
+    --color-primario: #ff6600;
+    --color-primario-hover: #005BFF;
+    --color-titulos: #333;
+    --color-texto: #555;
+    --color-fondo: #FFA500;    
+    --color-blanco: #ffffff;
+    --color-bordes: #005BFF;
+    --color-importante: #005BFF;
+    --color-footer: #FFE5BF;
+  
+    --fuente-titulos: 'Roboto Slab', serif; 
+    --fuente-cuerpo: 'Lato', sans-serif;  
+} */
+
+/*--PALETA TRIÁDRICA (naranja + violeta + verde)*/
+/* :root {
+    --color-primario: #ff6600;
+    --color-primario-hover: #9933FF;
+    --color-titulos: #00CC66;
+    --color-texto: black;
+    --color-fondo: #FFA500;    
+    --color-blanco: #ffffff;
+    --color-bordes: #9933FF;
+    --color-importante: #9933FF;
+    --color-footer: #FFE5BF;
+  
+
+    --fuente-titulos: 'Roboto Slab', serif; 
+    --fuente-cuerpo: 'Lato', sans-serif;  
+} */
+
+/* --- Estilos Globales --- */
+/* body {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-texto);
+    margin: 0;
+    
+} */
+
+.text-tierra {
+  color: #8B4513 !important; /* marrón tierra */
+}
+
+.h2{
+    margin-left: 12px;
+    border-bottom: 2px dotted var(--color-texto);
+    color: var(--color-texto) !important;
+    text-align: center;
+}
+
+.navbar-toggler.custom-toggler {
+  border-color:var(--color-texto); /* opcional */
+}
+
+.navbar-toggler.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(25,135,84,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.icono {
+    width: 24px;
+    margin: 4px;
+}
+

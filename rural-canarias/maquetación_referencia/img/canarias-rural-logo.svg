@@ -1,0 +1,39 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular verde esmeralda -->
+  <circle cx="100" cy="100" r="95" fill="#059669"/>
+  
+  <!-- Casa rural -->
+  <g transform="translate(100, 100)">
+    <!-- Base de la casa -->
+    <rect x="-30" y="-10" width="60" height="40" fill="#FFFFFF" rx="2"/>
+    
+    <!-- Techo -->
+    <path d="M -40 -10 L 0 -40 L 40 -10 Z" fill="#10B981"/>
+    
+    <!-- Puerta -->
+    <rect x="-8" y="10" width="16" height="20" fill="#059669" rx="1"/>
+    
+    <!-- Ventanas -->
+    <rect x="-22" y="0" width="10" height="10" fill="#D1FAE5" rx="1"/>
+    <rect x="12" y="0" width="10" height="10" fill="#D1FAE5" rx="1"/>
+    
+    <!-- Chimenea -->
+    <rect x="15" y="-30" width="8" height="15" fill="#DC2626"/>
+    
+    <!-- Montañas en el fondo -->
+    <path d="M -60 -15 L -45 -35 L -30 -15" fill="#34D399" opacity="0.6"/>
+    <path d="M 30 -15 L 45 -30 L 60 -15" fill="#34D399" opacity="0.6"/>
+    
+    <!-- Palmera pequeña -->
+    <line x1="-50" y1="30" x2="-50" y2="10" stroke="#10B981" stroke-width="2"/>
+    <circle cx="-50" cy="5" r="6" fill="#34D399"/>
+    
+    <!-- Sol -->
+    <circle cx="45" cy="-45" r="8" fill="#FCD34D"/>
+  </g>
+  
+  <!-- Texto CanariasRural (opcional, puedes quitarlo si prefieres solo el icono) -->
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    CanariasRural
+  </text>
+</svg>
