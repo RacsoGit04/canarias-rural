@@ -1,6 +1,6 @@
 # Guía de Contribución y Normas del Equipo
 
-Este documento define cómo vamos a trabajar juntos para evitar romper el código, minimizar conflictos y aprobar la asignatura con nota.
+Este documento define cómo vamos a trabajar juntos para evitar romper el código, y minimizar conflictos.
 
 ---
 
@@ -10,7 +10,7 @@ Este documento define cómo vamos a trabajar juntos para evitar romper el códig
 
 - La rama `main` es sagrada. Solo contiene código en producción.
 - La rama `develop` es para integración. Solo se mergea mediante Pull Requests.
-- **Si rompes `main` o `develop`, rompes el trabajo de todos.**
+- **Si rompemos `main` o `develop`, rompemos el trabajo de todos.**
 
 ---
 
@@ -28,18 +28,18 @@ main (producción, protegida)
 
 ### Proceso completo para cada tarea:
 
-#### **Paso 1: Sincronizarte con `develop`**
+#### **Paso 1: Sincronizarse con `develop`**
 
-Antes de empezar cualquier tarea, bájate lo último de la nube:
+Antes de empezar cualquier tarea, bajamos lo último de la nube:
 
 ```bash
 git checkout develop
 git pull origin develop
 ```
 
-#### **Paso 2: Crear tu rama de feature**
+#### **Paso 2: Crear nuestra rama de feature**
 
-Nunca trabajes directamente en `develop`. Crea una rama con este formato:
+Nunca trabajamos directamente en `develop`. Crear una rama con este formato:
 
 **Formato:** `feature/WOJA-XX-descripcion-corta`
 
@@ -55,12 +55,12 @@ Nunca trabajes directamente en `develop`. Crea una rama con este formato:
 git checkout -b feature/WOJA-26-login-backend
 ```
 
-#### **Paso 3: Programa y haz commits frecuentes**
+#### **Paso 3: Programar y hacer commits frecuentes**
 
-Trabaja normalmente y guarda tus cambios con commits **atómicos** (un commit = un cambio lógico):
+Trabajar normalmente y guardar los cambios con commits **atómicos** (un commit = un cambio lógico):
 
 ```bash
-# Ver qué archivos has cambiado
+# Ver qué archivos hemos cambiado
 git status
 
 # Añadir archivos al staging
@@ -74,13 +74,13 @@ git add src/main/java/com/example/service/AuthService.java
 git commit -m "WOJA-26: Implementar lógica de autenticación JWT"
 ```
 
-#### **Paso 4: Subir tu rama a GitHub**
+#### **Paso 4: Subir nuestra rama a GitHub**
 
 ```bash
 git push origin feature/WOJA-26-login-backend
 ```
 
-Si es la primera vez que subes esa rama, Git te dirá que hagas:
+Si es la primera vez que subimos esa rama, Git nos dirá que hagamos:
 
 ```bash
 git push --set-upstream origin feature/WOJA-26-login-backend
@@ -88,29 +88,29 @@ git push --set-upstream origin feature/WOJA-26-login-backend
 
 #### **Paso 5: Crear Pull Request**
 
-1. Ve a GitHub
-2. Verás un botón verde "Compare & pull request" → Click
-3. **IMPORTANTE:** Asegúrate de que el PR va hacia `develop`, NO hacia `main`
+1. Vamos a GitHub
+2.  Botón verde "Compare & pull request" → Click
+3. **IMPORTANTE:** Asegurarnos de que el PR va hacia `develop`, NO hacia `main`
 
 - Base: `develop`
 - Compare: `feature/WOJA-26-login-backend`
 
-4. Rellena el template del PR (ver sección 6)
-5. Asigna a UN compañero como revisor
-6. Envía el PR
+4. Rellenamos el template del PR (ver sección 6)
+5. Asignamos a UN compañero como revisor
+6. Envíamos el PR
 
 #### **Paso 6: Esperar aprobación y mergear**
 
 - **Revisor:** Debe revisar el código y aprobar (ver sección 4)
-- **Autor:** Una vez aprobado, haz clic en "Merge pull request"
-- **Autor:** Borra la rama de feature tras el merge
+- **Autor:** Una vez aprobado, click en "Merge pull request"
+- **Autor:** Borrar la rama de feature tras el merge
 
 ```bash
-# Después del merge, actualiza tu develop local
+# Después del merge, actualizamos nuestro develop local
 git checkout develop
 git pull origin develop
 
-# Borra tu rama local (ya está mergeada)
+# Borramos nuestra rama local (ya está mergeada)
 git branch -d feature/WOJA-26-login-backend
 ```
 
@@ -140,7 +140,7 @@ git commit -m "WOJA-27: Crear componente AccommodationCard.jsx"
 git commit -m "WOJA-29: Añadir filtro por zona en backend"
 ```
 
-### Prefijos opcionales (si no tienes número de tarea):
+### Prefijos opcionales (si no tenemos número de tarea):
 
 - `feat:` para nuevas funcionalidades
 - `fix:` para arreglar errores
@@ -162,37 +162,37 @@ git commit -m "docs: actualizar README con instrucciones de Docker"
 
 **Ningún código entra a `develop` sin ser aprobado por AL MENOS 1 compañero.**
 
-### Si TÚ subes el código (autor del PR):
+### Si subimos el código (autor del PR):
 
-1. **Asegúrate de que funciona** antes de abrir el PR:
+1. **Asegurarse de que funciona** antes de abrir el PR:
 
 - El código compila sin errores
 - La aplicación arranca (tanto backend como frontend)
 - No hay errores en la consola
-- Probaste manualmente la funcionalidad
+- Probamos manualmente la funcionalidad
 
-2. **Avisa al equipo:**
+2. **Avisar al equipo:**
 
 - "Chicos, he subido el Login (WOJA-26), ¿puede alguien revisarlo?"
-- Asigna a un revisor específico en GitHub
+- Asignar a un revisor específico en GitHub
 
-3. **Responde a los comentarios:**
+3. **Responder a los comentarios:**
 
-- Si el revisor pide cambios, hazlos
-- Comenta y explica si no estás de acuerdo
-- Vuelve a notificar cuando hayas hecho los cambios
+- Si el revisor pide cambios, hacerlos
+- Comentar y explica si no estás de acuerdo
+- Volver a notificar cuando se hayan hecho los cambios
 
-### Si TÚ revisas el código (revisor del PR):
+### Si revisamos el código (revisor del PR):
 
-1. **Lee los cambios:**
+1. **Leer los cambios:**
 
-- Ve a la pestaña "Files changed"
-- Lee el código línea por línea
-- ¿Entiendes lo que hace?
+- Ir a la pestaña "Files changed"
+- Leer el código línea por línea
+- ¿Entiendo lo que hace?
 - ¿Los nombres de variables tienen sentido?
 - ¿Hay código duplicado?
 
-2. **Pruébalo localmente** (si puedes):
+2. **Probarlo localmente** (si es posible):
 
 ```bash
 git fetch origin
@@ -200,16 +200,16 @@ git checkout feature/WOJA-26-login-backend
 # Levantar el proyecto y probar
 ```
 
-3. **Deja comentarios constructivos:**
+3. **Dejar comentarios constructivos:**
 
-- Si ves algo mal, haz clic en la línea y deja un comentario
-- Sé específico: "Esta variable debería llamarse `userId` en lugar de `id` para ser más claro"
-- No seas destructivo: "Esto está mal" → "¿Qué te parece renombrar esto para que sea más claro?"
+- Si vemos algo mal,  clic en la línea y dejar un comentario
+- Ser específico: "Esta variable debería llamarse `userId` en lugar de `id` para ser más claro"
+- No ser destructivo: "Esto está mal" → "¿Qué te parece renombrar esto para que sea más claro?"
 
 4. **Aprobar o pedir cambios:**
 
 - Si todo está bien → "Approve"
-- Si hay problemas → "Request changes" y explica qué hay que arreglar
+- Si hay problemas → "Request changes" y explicar qué hay que arreglar
 - Si solo son sugerencias → "Comment" (sin bloquear el merge)
 
 ---
@@ -222,57 +222,54 @@ Si GitHub te dice que hay conflictos al intentar mergear tu PR:
 
 ### ¿Por qué pasa esto?
 
-Alguien mergeó cambios en `develop` mientras tú trabajabas, y modificaron las mismas líneas que tú.
+Alguien mergeó cambios en `develop` mientras x persona trabajaba y se modificaron las mismas líneas que x persona.
 
 ### ¿Qué hacer?
 
-**Es TU responsabilidad** (el autor del PR) resolver los conflictos:
+**Es Nuestra responsabilidad** (el autor del PR) resolver los conflictos:
 
 ```bash
-# 1. Asegúrate de tener tus cambios guardados
+# 1. Nos aseguramos de tener los cambios guardados
 git add .
 git commit -m "WOJA-26: guardar cambios antes de resolver conflictos"
 
-# 2. Bájate los últimos cambios de develop
+# 2. Bajamos los últimos cambios de develop
 git checkout develop
 git pull origin develop
 
-# 3. Vuelve a tu rama
+# 3. Volvemos a nuestra rama
 git checkout feature/WOJA-26-login-backend
 
-# 4. Trae los cambios de develop a tu rama
+# 4. Traemos los cambios de develop a nuestra rama
 git merge develop
 
-# 5. Git te dirá qué archivos tienen conflictos
-# Ábrelos en VS Code - verás marcas como:
+# 5. Git dirá qué archivos tienen conflictos
+# Lo abrimos en VS Code - hay marcas como:
 # <<<<<<< HEAD
 # tu código
 # =======
 # código de develop
 # >>>>>>> develop
 
-# 6. Edita manualmente y decide qué código quedarte
-# VS Code te ayuda con botones "Accept Current" / "Accept Incoming"
+# 6. Editamos manualmente y decidimos qué código quedarnos
+# VS Code nos ayuda con botones "Accept Current" / "Accept Incoming"
 
-# 7. Marca los conflictos como resueltos
+# 7. Marcar los conflictos como resueltos
 git add archivo-con-conflicto.java
 git commit -m "WOJA-26: resolver conflictos con develop"
 
-# 8. Sube los cambios
+# 8. Subir los cambios
 git push origin feature/WOJA-26-login-backend
 ```
 
-### NUNCA hagas:
+### NUNCA hacer:
 
 ```bash
-git push --force # NUNCA (a menos que sepas MUY BIEN lo que haces)
+git push --force # NUNCA (CONTADAS EXCEPCIONES)
 ```
-
-Si tienes dudas, **pide ayuda al equipo antes de hacer force push**.
-
 ---
 
-## 6. Definition of Done (¿Cuándo he terminado?)
+## 6. Definition of Done (¿Cuándo hemos terminado?)
 
 Una tarea solo se considera terminada si cumple TODO esto:
 
@@ -333,7 +330,7 @@ docker-compose down
 docker-compose restart backend
 ```
 
-### Reconstruir imágenes (si cambias dependencias):
+### Reconstruir imágenes (si cambiamos dependencias):
 
 ```bash
 docker-compose up --build
@@ -356,7 +353,7 @@ docker-compose up --build
 
 ## 8. Template de Pull Request
 
-Cuando crees un PR, rellena esto:
+Cuando se crea un PR, rellenar esto:
 
 ```markdown
 ## Descripción
@@ -435,7 +432,7 @@ git clean -fd
 ### "Hice commit en develop por error"
 
 ```bash
-# Solo si NO has hecho push todavía
+# Solo si NO hemos hecho push todavía
 git reset --soft HEAD~1 # Deshace el commit pero mantiene los cambios
 git checkout -b feature/WOJA-XX-nueva-rama # Crea la rama correcta
 git commit -m "mensaje"
@@ -444,7 +441,7 @@ git commit -m "mensaje"
 ### "Quiero cambiar el mensaje del último commit"
 
 ```bash
-# Solo si NO has hecho push todavía
+# Solo si NO hemos hecho push todavía
 git commit --amend -m "nuevo mensaje"
 ```
 
@@ -473,9 +470,153 @@ Las ramas `main` y `develop` están **protegidas** en GitHub:
 
 **Si intentas hacer push directo, GitHub te rechazará el push.**
 
----
+## 12. Proteger las Ramas en GitHub (SETUP INICIAL)
 
-## Recursos Útiles
+1. Ir a Settings → Branches
+2. Add rule en `main`:
+   - ☑ Require pull request before merging
+   - ☑ Require approvals (1)
+   - ☑ Dismiss stale PR approvals
+3. Repetir para `develop`
+
+## 13. Primera Vez Clonando el Proyecto
+
+git clone [url]
+cd proyecto
+git checkout develop  # Trabajamos desde develop, NO desde main
+git checkout -b feature/WOJA-XX-mi-tarea
+
+## Releases 
+
+#### ¿Cuándo subimos a `main`?
+- Al final de cada sprint (cada 2 semanas)
+- Cuando tengamos un conjunto de features completo
+- Solo si `develop` está funcionando sin errores
+
+#### Proceso:
+1. Tech Lead crea PR de `develop` → `main`
+2. TODO el equipo revisa
+3. Se testea en entorno de staging 
+4. Se mergea y despliega
+5. Se crea tag de versión (v1.0.0, v1.1.0, etc.)
+
+#### Gestión de Conflictos
+
+**Escenario:**
+
+Uno de nosotros mergea esto en develop: archivo.java línea 10: String nombre = "Hotel Barcelona";
+
+Otro de nosotros estaba trabajando en lo mismo: archivo.java línea 10: String nombre = "Alojamiento Barcelona";
+
+CONFLICTO: Git no sabe cuál código mantener
+
+```
+# 1. El PR tiene conflictos, GitHub  avisa
+
+# 2. Ir a la terminal:
+git checkout develop
+git pull origin develop  # Bajamos los cambios del compañero
+
+# 3. Volver a nuestra rama:
+git checkout feature/WOJA-26-login-backend
+
+# 4. Traer develop a nuestra rama:
+git merge develop
+# Git : "CONFLICT in archivo.java"
+
+# 5. Abir archivo.java en VS Code:
+
+<<<<<<< HEAD (tu código)
+String nombre = "Alojamiento Barcelona";
+=======
+String nombre = "Hotel Barcelona";  (código de develop)
+>>>>>>> develop
+
+# 6. Después de elegir:
+git add archivo.java
+git commit -m "WOJA-26: resolver conflictos con develop"
+git push origin feature/WOJA-26-login-backend
+
+```
+
+## Borrar ramas locales y remotas ya mergeadas
+
+
+
+
+
+**GitHub mantiene TODO el historial**
+
+**Dónde ver el trabajo de cada persona**:
+
+* En el Pull Request mergeado:
+
+GitHub → Pull Requests → Closed
+
+Ahí están TODOS los PRs con:
+
+Quién lo hizo
+Qué código cambió
+Cuándo se mergeó
+Los commits individuales
+
+
+* En la pestaña "Insights" → "Contributors":
+
+GitHub muestra estadísticas de cada miembro
+Commits por persona
+Líneas añadidas/eliminadas
+
+
+* En el historial de commits:
+
+```
+
+bash   git log --author="NombreCompañero"
+
+```
+
+
+### Procedimiento estándar:
+
+#### 1. Borrar rama REMOTA (GitHub):
+- En el PR mergeado: Click "Delete branch"
+- O automatizar: Settings → ☑ Automatically delete head branches
+
+#### 2. Borrar rama LOCAL (PC):
+```bash
+git checkout develop
+git pull origin develop
+git branch -d feature/WOJA-26-login
+```
+
+### ¿Por qué borrar ambas?
+
+Remoto:
+- Mantener el repositorio limpio y profesional
+- Evitar confusión con ramas viejas
+- Facilitar encontrar trabajo activo
+- Así trabajan equipos reales
+
+Local:
+
+¿Por qué?
+
+- Confusión: "¿En cuál estaba trabajando?"
+- Ocupan espacio (aunque poco)
+- Podemos trabajar en una rama vieja por error
+- git branch se vuelve ilegible
+
+
+### El historial NO se pierde
+
+### Comando rápido para limpiar locales:
+```bash
+# Borrar TODAS las ramas locales ya mergeadas
+git branch --merged develop | grep -v "develop" | xargs git branch -d
+```
+
+## Recursos
 
 - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 - [Visualizar Git](https://git-school.github.io/visualizing-git/)
