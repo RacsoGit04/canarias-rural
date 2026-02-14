@@ -486,7 +486,7 @@ cd proyecto
 git checkout develop  # Trabajamos desde develop, NO desde main
 git checkout -b feature/WOJA-XX-mi-tarea
 
-## Releases 
+## 14. Releases 
 
 #### ¿Cuándo subimos a `main`?
 - Al final de cada sprint (cada 2 semanas)
@@ -539,7 +539,7 @@ git push origin feature/WOJA-26-login-backend
 
 ```
 
-## Borrar ramas locales y remotas ya mergeadas
+## 15 Borrar ramas locales y remotas ya mergeadas
 
 
 
@@ -614,6 +614,93 @@ Local:
 ```bash
 # Borrar TODAS las ramas locales ya mergeadas
 git branch --merged develop | grep -v "develop" | xargs git branch -d
+```
+
+## 16. Setup Inicial para Colaboradores
+
+### Dueño repositorio
+
+1. **Colaboradores:**
+   - Settings → Collaborators → Add people
+   - Añadir a todos los del equipo con "Write" access
+
+2. **Protección ramas:**
+   - Settings → Branches → Add rule
+   - Proteger `main` y `develop`
+
+
+---
+
+### Colaboradores:
+
+1. **Aceptación invitación:**
+
+2. **Clonación del proyecto:**
+```bash
+   git clone [URL]
+   cd nombre-proyecto
+```
+
+3. **Configurar identidad (CRÍTICO):**
+```bash
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tu-email-github@ejemplo.com"
+```
+
+4. **Verificación acceso:**
+```bash
+   git checkout develop
+   git pull origin develop
+```
+
+---
+
+###  Workflow diario :
+```bash
+# 1. Empezamos el día actualizando develop
+git checkout develop
+git pull origin develop
+
+# 2. Crear rama para nuestra tarea
+git checkout -b feature/WOJA-XX-descripcion
+
+# 3. Trabajar, hacer commits, subir
+git add .
+git commit -m "WOJA-XX: mensaje"
+git push origin feature/WOJA-XX-descripcion
+
+# 4. Crear PR en GitHub
+# 5. Esperar aprobación y mergear
+```
+
+---
+
+### Reglas del equipo:
+
+1. **NUNCA** hacer push directo a `main` o `develop`
+2. **SIEMPRE** trabajar en ramas `feature/`
+3. **SIEMPRE** crear Pull Request
+4. **SIEMPRE** pedir code review (mínimo 1 persona)
+5. **SIEMPRE** sincronizar con develop antes de empezar
+
+---
+
+### Si algo no funciona:
+```bash
+# Verificar acceso:
+git remote -v
+
+
+# Verificar rama:
+git branch
+
+# Verificar identidad:
+git config user.name
+git config user.email
+
+# Verificar que se puede hacer push:
+git push origin nombre-de-tu-rama
+
 ```
 
 ## Recursos
