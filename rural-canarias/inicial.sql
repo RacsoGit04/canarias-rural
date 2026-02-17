@@ -10,7 +10,7 @@ CREATE TABLE roles (
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL, -- Quité el UNIQUE por seguridad
+    password_hash VARCHAR(255) NOT NULL,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     phone VARCHAR(20),
@@ -19,14 +19,14 @@ CREATE TABLE users (
     is_active BOOLEAN DEFAULT true
 );
 
--- Tabla intermedia (Relación Muchos a Muchos)
+-- Tabla intermedia 
 CREATE TABLE user_roles (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     role_id INTEGER REFERENCES roles(id) ON DELETE CASCADE,
     PRIMARY KEY (user_id, role_id)
 );
 
--- Tabla Perfil proveedor (Relación 1 a 1 con users)
+-- Tabla Perfil proveedor
 CREATE TABLE providers (
     user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
     company_name VARCHAR(150),
@@ -47,4 +47,4 @@ CREATE TABLE zones (
 INSERT INTO roles (name, description) VALUES
 ('ROLE_USER', 'Usuario viajero estándar'),
 ('ROLE_PROVIDER', 'Proveedor de servicios (alojamiento/actividades)'),
-('ROLE_ADMIN', 'Administrador de la plataforma'); -- Comillas agregadas aquí
+('ROLE_ADMIN', 'Administrador de la plataforma'); 
