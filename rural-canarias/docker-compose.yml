@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   db:
-    image: postgres
+    image: postgres:15  
     container_name: postgres-db
     environment:
       POSTGRES_USER: postgres
@@ -12,6 +10,13 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:  
+      test: ["CMD-SHELL", "pg_isready -U postgres -d canarias_rural_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks: 
+      - app-network
 
   backend:
     build: ./backend
@@ -19,13 +24,17 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/canarias_rural_db
-    volumes:
-      - ./backend:/app
-      - /app/.mvn
-      - /app/target
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/canarias_rural_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SERVER_PORT: 8080
+      SERVER_ADDRESS: 0.0.0.0
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    networks:
+      - app-network
 
   frontend:
     build: ./frontend
@@ -35,11 +44,18 @@ services:
     stdin_open: true
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://localhost:8080  
     volumes:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
       - backend
+    networks:  
+      - app-network
 
 volumes:
   postgres_data:
+
+networks:  
+  app-network:
+    driver: bridge
