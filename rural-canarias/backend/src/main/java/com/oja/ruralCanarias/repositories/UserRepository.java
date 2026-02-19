@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     //Para el registro solo quiero saber si hay un email en uso, findByEmail gastaría memoria innecasariamente
-    boolean existsByEmail(string email); 
+    boolean existsByEmail(String email); 
     //Para el login 
     Optional<User> findByUsername(String email);
 }

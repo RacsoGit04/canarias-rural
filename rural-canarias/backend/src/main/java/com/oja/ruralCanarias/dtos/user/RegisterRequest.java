@@ -1,5 +1,4 @@
-package com.oja.ruralCanarias.dtos
-
+package com.oja.ruralCanarias.dtos.auth;
 public class RegisterRequest {
 
     private String firstName; 
