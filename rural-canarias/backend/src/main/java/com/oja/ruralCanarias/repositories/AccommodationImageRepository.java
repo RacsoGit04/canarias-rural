@@ -1,7 +1,7 @@
 package com.oja.ruralCanarias.repositories;
 import org.springframework.data.jpa.repository.JpaRepository; 
 import org.springframework.stereotype.Repository; 
-import com.oja.ruralCanarias.models.AccommodationImage
+import com.oja.ruralCanarias.models.AccommodationImage;
 
 @Repository
 public interface AccommodationImageRepository extends JpaRepository<AccommodationImage, Long>{

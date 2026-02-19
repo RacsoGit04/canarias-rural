@@ -1,7 +1,7 @@
 package com.oja.ruralCanarias.repositories;
 import org.springframework.data.jpa.repository.JpaRepository; 
 import org.springframework.stereotype.Repository; 
-import com.oja.ruralCanarias.models.Review
+import com.oja.ruralCanarias.models.Review;
 
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, Long>{
