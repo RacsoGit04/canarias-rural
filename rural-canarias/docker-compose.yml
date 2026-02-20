@@ -9,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./inicial.sql:/docker-entrypoint-initdb.d/inicial.sql
     healthcheck:  
       test: ["CMD-SHELL", "pg_isready -U postgres -d canarias_rural_db"]
       interval: 5s

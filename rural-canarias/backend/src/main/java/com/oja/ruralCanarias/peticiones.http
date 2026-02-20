@@ -1,11 +1,11 @@
-POST https://super-duper-enigma-v6p7w4ggxvwv3xx7p-8080.app.github.dev/api/auth/register
+POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
   "firstName": "Carlos",
   "lastName": "Santana",
   "email": "carlos@test.com",
-  "password": "supersecreta",
+  "password": "Supersecreta1",
   "phone": "612345678",
   "roles": [
     {

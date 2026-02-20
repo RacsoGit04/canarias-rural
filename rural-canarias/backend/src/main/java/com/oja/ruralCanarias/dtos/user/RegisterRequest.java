@@ -1,14 +1,41 @@
-package com.oja.ruralCanarias.dtos.auth;
+package com.oja.ruralCanarias.dtos.user;
+import jakarta.validation.constraints.*;
 public class RegisterRequest {
+    @NotBlank(message = "El email es obligatorio")
+    @Email(message = "Email no válido")
+    private String email;
 
-    private String firstName; 
-    private String lastName; 
-    private String email; 
-    private String password; 
-    private String phone; 
+    @NotBlank(message = "La contraseña es obligatoria")
+    @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
+    @Pattern(
+        regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$",
+        message = "La contraseña debe contener mayúsculas, minúsculas y números"
+    )
+    private String password;
+
+    @NotBlank(message = "El nombre es obligatorio")
+    private String firstName;
+
+    @NotBlank(message = "El apellido es obligatorio")
+    private String lastName;
+
+    private String phone;
     
     // CONSTRUCTORES
     public RegisterRequest() {}
+
+    /**
+     * Constructor con todos los parámetros.
+     * Aunque Spring Boot utiliza el constructor vacío por defecto para procesar el JSON,
+     * este constructor se mantiene para facilitar la creación rápida de objetos durante el Testing.
+     */
+    public RegisterRequest(String email, String password, String firstName, String lastName, String phone) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+    }
 
     // GETTERS Y SETTERS
     public String getFirstName() { return firstName; }
