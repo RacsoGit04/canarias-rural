@@ -9,6 +9,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     //Para el registro solo quiero saber si hay un email en uso, findByEmail gastaría memoria innecasariamente
     boolean existsByEmail(String email); 
     //Para el login 
-    Optional<User> findByUsername(String email);
+    Optional<User> findByEmail(String email);
 }
 
